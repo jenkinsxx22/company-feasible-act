@@ -83,5 +83,22 @@ public class EmployeeDao {
 		}
 	return emplist;
 	}
+	public void DeleteEmployee(Employee emp) 	{		
+		Transaction trn =null;
+		SessionFactory sf = new Configuration().configure("/com/feasible/util/Hibernate.cfg.xml").buildSessionFactory();
+		Session p = sf.openSession();
+		
+		
+		try {
+			trn = p.beginTransaction();
+			p.delete(emp);
+			trn.commit();
+		}
+		catch(HibernateException e){
+			if (trn!=null) {
+				trn.rollback();
+			}
+		}
+	}
 	
 }
