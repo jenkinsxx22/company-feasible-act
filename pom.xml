@@ -6,7 +6,9 @@
   <packaging>war</packaging>
   <name>Feasible companies</name>
   <description>Feasible companies	</description>
-
+<!-----
+git update
+--!>
 <dependencies>
 	<dependency>
 		<groupId>mysql</groupId>
